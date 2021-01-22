@@ -10,13 +10,11 @@ function TodoForm(props) {
 
   const handleInputChange = e => {
     setState({ ...item, [e.target.name]: e.target.value });
-    console.log('item in handleInputChange', item);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     e.target.reset();
-    console.log('this is the item', item);
     props.handleSubmit(item);
     setState({});
   };

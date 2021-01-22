@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 
 function useAjaxCalls() {
@@ -11,10 +11,8 @@ function useAjaxCalls() {
   }, []);
 
   const reload = async () => {
-    console.log('inside reload function');
     await axios.get(URL)
       .then(results => {
-        console.log('results two ways', results.data)
         setList(results.data.results);
       })
       .catch((err) => {
@@ -22,7 +20,6 @@ function useAjaxCalls() {
       });
   }
   const addItem = (item) => {
-    console.log('this is the item', item);
         axios.post(URL,
       {
         "complete": false,
@@ -33,9 +30,7 @@ function useAjaxCalls() {
     },
     )
       .then(results => {
-        console.log('inside the .then', results);
         setList([...list, results.data]);
-        console.log('after set list', list);
       })
       .catch((err)=>{
         console.error(err)
