@@ -13,7 +13,6 @@ function LoginProvider(props) {
   const [loggedIn, setLoggedIn] = useState(false);
 
   const login = (username, password) => {
-    console.log('before fetch', username, password);
     fetch(`${API}/signin`, {
       method: 'post',
       mode: 'cors',
@@ -23,11 +22,9 @@ function LoginProvider(props) {
       }),
     })
       .then(response => {
-        console.log('response from server', response);
         return response.json();
       })
       .then(user => {
-        console.log('user', user);
         validateToken(user.token);
       })
       .catch((err) => {
@@ -36,10 +33,8 @@ function LoginProvider(props) {
   }
 
   const validateToken = (token) => {
-    console.log(token);
     try {
       let user = jwt.verify(token, process.env.REACT_APP_SECRET);
-      console.log('made it inside validateToken', user);
       setUser(user);
       setLogInState(true, token, user);
     }
@@ -54,7 +49,6 @@ function LoginProvider(props) {
   // }
 
   const setLogInState = (loggedIn, token, user) => {
-    console.log('inside setLogInState', user)
     cookie.save('auth', token);
     setLoggedIn(true);
   }

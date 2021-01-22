@@ -26,7 +26,6 @@ class AppSettings extends React.Component{
   setDefaultSort = (preference) => { this.setState({ defaultSortField: preference }) }
 
   render(){
-    console.log(this.state);
     return(
       <AppSettingsContext.Provider value={this.state}>
         {this.props.children}

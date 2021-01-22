@@ -8,14 +8,11 @@ import { LoginContext } from './auth-context';
 function Auth(props) {
   const [okToRender, setOkToRender] = useState(false);
   const loginContext = useContext(LoginContext);
-  // console.log('newest consolelog', LoginContext)
   useEffect(() => {
-    console.log('loginContext', loginContext)
     setOkToRender(
       loginContext.loggedIn && (props.capability ? loginContext.user.capabilities.includes(props.capability) : false)
     )
   }, [loginContext, props.capability])
-  //console.log(okToRender, loginContext.loggedIn)
 
   return (
     okToRender &&
