@@ -3,6 +3,7 @@ import Modal from 'react-bootstrap/Modal';
 import Badge from 'react-bootstrap/Badge';
 import { AppSettingsContext } from '../context/settings/context';
 import useAjaxCalls from './hooks/ajax';
+import Sortbar from './sortbar/sortbar';
 
 function TodoList(props) {
   const [URL, list, setList, addItem] = useAjaxCalls();
@@ -14,22 +15,23 @@ function TodoList(props) {
     appSettingsContext.itemsPerScreen * (currentPage + 1)
   );
 
-  const updateSortMethod = e => {
-    e.preventDefault();
-    appSettingsContext.setDefaultSort(e.target.value);
-  };
+  // const updateSortMethod = e => {
+  //   e.preventDefault();
+  //   appSettingsContext.setDefaultSort(e.target.value);
+  // };
 
-  const updateCompleted = e => {
-    appSettingsContext.setCompleted(e.target.value);
-    //TO DO: if props.list.complete is true, hide that item
-  };
+  // const updateCompleted = e => {
+  //   appSettingsContext.setCompleted(e.target.value);
+  //   //TO DO: if props.list.complete is true, hide that item
+  // };
 
-  const radioSubmit = e => {
-    e.preventDefault();
-    renderSortMethod();
-  };
+  // const radioSubmit = e => {
+  //   e.preventDefault();
+  //   renderSortMethod();
+  // };
 
   const renderSortMethod = e => {
+    console.log('render sort!!!')
     if (appSettingsContext.defaultSortField === 'difficulty') {
       let result = props.list.sort((a, b) =>
         a.difficulty > b.difficulty ? 1 : -1
@@ -58,7 +60,8 @@ function TodoList(props) {
 
   return (
     <div>
-      <form onSubmit={radioSubmit}>
+      <Sortbar renderSortMethod={renderSortMethod}></Sortbar>
+      {/* <form onSubmit={radioSubmit}>
         <label for="sort">Choose a sort method:</label>
         <input type="radio" onClick={updateSortMethod} value="difficulty" />
         Difficulty
@@ -71,8 +74,7 @@ function TodoList(props) {
       <div>
         <button onClick={updateCompleted} value="false">
           Hide completed items
-        </button>
-      </div>
+        </button> */}
 
       {page.map(item => (
         <Modal.Dialog>

@@ -1,15 +1,14 @@
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
+import './header.scss';
 
 function Header(props) {
   return (
-    <Navbar bg="primary" variant="dark" expand="lg">
-      <Navbar.Brand href="#home">To Do</Navbar.Brand>
-      <Nav className="mr-auto">
-      <Nav.Link>Sign Out</Nav.Link>   
-      </Nav>
-      </Navbar>
-
+    <div className="topnav">
+      <a className="active" href="#home">
+        Home
+      </a>
+      <a href="#news">Sign Out</a>
+      <a href="#about">About</a>
+    </div>
   );
 }
 

@@ -35,8 +35,9 @@ function Login(props) {
   return (
     <>
       {loginContext.loggedIn ? (
-        <button onClick={handleLogout}>Sign Out</button>
+        ''
       ) : (
+        // <button onClick={handleLogout}>Sign Out</button>
         <Card>
           <h1>
             <Card.Header id="welcome">Welcome to the To Do App</Card.Header>
