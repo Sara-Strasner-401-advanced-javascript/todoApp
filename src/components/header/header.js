@@ -2,7 +2,7 @@ import './header.scss';
 
 function Header(props) {
   return (
-    <div className="topnav">
+    <div className="header">
       <a className="active" href="#home">
         Home
       </a>

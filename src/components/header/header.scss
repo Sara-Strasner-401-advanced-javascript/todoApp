@@ -1,11 +1,13 @@
-.topnav {
+.header {
   background-color: #011640;
   overflow: hidden;
   height: 50px;
+  grid-column-start: 1;
+  grid-column-end: 3;
 }
 
 /* Style the links inside the navigation bar */
-.topnav a {
+.header a {
   float: left;
   color: #f2f2f2;
   text-align: center;
@@ -15,13 +17,13 @@
 }
 
 /* Change the color of links on hover */
-.topnav a:hover {
+.header a:hover {
   background-color: #ddd;
   color: black;
 }
 
 /* Add a color to the active/current link */
-.topnav a.active {
-  background-color: #021F59;
+.header a.active {
+  background-color: #021f59;
   color: white;
 }

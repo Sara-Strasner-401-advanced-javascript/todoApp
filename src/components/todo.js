@@ -34,7 +34,7 @@ function ToDo(props) {
   };
 
   return (
-    <div>
+    <div className="todo">
       <div className="statusbar">There are {count} Items To Complete</div>
       <section className="todo">
         <div>

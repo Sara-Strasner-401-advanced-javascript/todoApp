@@ -1,3 +1,27 @@
+/* Color Theme Swatches in Hex */
+$Cycling-Scotland-1-hex: #F279A6;
+$Cycling-Scotland-2-hex: #F2F2F2;
+$Cycling-Scotland-3-hex: #021F59;
+$Cycling-Scotland-4-hex: #011640;
+$Cycling-Scotland-5-hex: #0A3459;
+
+/* Color Theme Swatches in RGBA */
+$Cycling-Scotland-1-rgba: rgba(242,121,165, 1);
+$Cycling-Scotland-2-rgba: rgba(242,242,242, 1);
+$Cycling-Scotland-3-rgba: rgba(1,30,89, 1);
+$Cycling-Scotland-4-rgba: rgba(1,22,63, 1);
+$Cycling-Scotland-5-rgba: rgba(9,52,89, 1);
+
+/* Color Theme Swatches in HSLA */
+$Cycling-Scotland-1-hsla: hsla(337, 82, 71, 1);
+$Cycling-Scotland-2-hsla: hsla(0, 0, 95, 1);
+$Cycling-Scotland-3-hsla: hsla(219, 96, 17, 1);
+$Cycling-Scotland-4-hsla: hsla(219, 96, 12, 1);
+$Cycling-Scotland-5-hsla: hsla(208, 80, 19, 1);
+
+![Color Swatches](./src/assets/color-swatches.png)
+
+
 # ToDo App (day 4 of build)
 
 ## Student: Tina Myers, Sara Strasner, Stacy Burris
